@@ -9,10 +9,6 @@ repos:
   - id: check-yaml
   - id: check-xml
   - id: end-of-file-fixer
-- repo: https://github.com/IamTheFij/docker-pre-commit
-  rev: v2.0.1
-  hooks:
-  - id: hadolint
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
   rev: v2.2.0
   hooks:
@@ -20,7 +16,3 @@ repos:
     args: [--autofix]
   - id: pretty-format-yaml
     args: [--autofix]
-- repo: https://github.com/markdownlint/markdownlint
-  rev: 5329a84691ab0fbce873aa69bb5073a6f5f98bdb
-  hooks:
-  - id: markdownlint_docker
