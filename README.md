@@ -21,7 +21,7 @@ listening to port 8080.
 ## Docker
 
 ```shell
-docker build -t gotimer/spring-boot-hello-world .
+docker build -t otherdevopsgene/hello-world-server .
 ```
 
-This will create a Docker image tagged `gotimer/spring-boot-hello-world`.
+This will create a Docker image tagged `otherdevopsgene/hello-world-server`.
