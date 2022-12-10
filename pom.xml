@@ -12,7 +12,7 @@
 
     <groupId>com.steampunk</groupId>
     <artifactId>helloworld</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.8-SNAPSHOT</version>
 
     <name>helloworld</name>
     <description>Demo project for Spring Boot</description>
