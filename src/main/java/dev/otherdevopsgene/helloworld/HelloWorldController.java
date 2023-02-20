@@ -1,4 +1,4 @@
-package com.steampunk.helloworld;
+package dev.otherdevopsgene.helloworld;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

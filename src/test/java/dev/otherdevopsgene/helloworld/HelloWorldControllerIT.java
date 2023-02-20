@@ -1,4 +1,4 @@
-package com.steampunk.helloworld;
+package dev.otherdevopsgene.helloworld;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

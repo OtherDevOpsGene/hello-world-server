@@ -1,4 +1,4 @@
-package com.steampunk.helloworld;
+package dev.otherdevopsgene.helloworld;
 
 import static org.hamcrest.Matchers.startsWith;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
