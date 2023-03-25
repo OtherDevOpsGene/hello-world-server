@@ -31,5 +31,11 @@ jobs:
     - name: cosign-installer
       uses: sigstore/cosign-installer@v2.0.0
 
+    - name: Configure AWS credentials from Test account
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::983430165732:role/github-oidc-kms-role
+        aws-region: us-east-1
+
     - name: Sign image
       run: cosign sign --key awskms:///arn:aws:kms:us-east-1:983430165732:alias/cosign-key2 otherdevopsgene/hello-world-server:latest
