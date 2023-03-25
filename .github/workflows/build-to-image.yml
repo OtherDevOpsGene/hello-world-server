@@ -35,7 +35,7 @@ jobs:
     - name: cosign-installer
       uses: sigstore/cosign-installer@v2.0.0
 
-    - name: Configure AWS credentials from Test account
+    - name: Assume AWS role
       uses: aws-actions/configure-aws-credentials@v2
       with:
         role-to-assume: arn:aws:iam::983430165732:role/github-oidc-kms-role
