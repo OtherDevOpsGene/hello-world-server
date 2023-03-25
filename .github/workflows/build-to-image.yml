@@ -22,9 +22,3 @@ jobs:
 
     - name: Build image
       run: docker build . --tag otherdevopsgene/hello-world-server:latest
-
-    - name: cosign-installer
-      uses: sigstore/cosign-installer@v2.0.0
-
-    - name: Sign image
-      run: cosign sign --key awskms:///arn:aws:kms:us-east-1:983430165732:alias/cosign-key1 otherdevopsgene/hello-world-server:latest
