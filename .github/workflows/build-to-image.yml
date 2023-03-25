@@ -27,4 +27,4 @@ jobs:
       uses: sigstore/cosign-installer@v2.0.0
 
     - name: Sign image
-      run: cosign sign --key awskms:///arn:aws:kms:us-east-1:983430165732:alias/cosign-key2
+      run: cosign sign --key awskms:///arn:aws:kms:us-east-1:983430165732:alias/cosign-key2 otherdevopsgene/hello-world-server:latest
