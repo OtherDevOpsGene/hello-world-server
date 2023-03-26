@@ -1,10 +1,6 @@
 name: Scan container image
 
-on:
-  workflow_run:
-    workflows: [Build application and create image]
-    types:
-    - completed
+on: workflow_dispatch
 
 jobs:
   docker:
