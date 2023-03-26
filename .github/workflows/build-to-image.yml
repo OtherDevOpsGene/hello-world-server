@@ -25,6 +25,7 @@ jobs:
       run: docker build . --tag otherdevopsgene/hello-world-server:latest
 
     - name: Scan image
+      uses: docker://gitguardian/ggshield:latest
       run: ggshield secret scan docker otherdevopsgene/hello-world-server:latest
       env:
         GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
