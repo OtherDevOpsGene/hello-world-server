@@ -1,9 +1,14 @@
 name: Scan container image
 
-on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: [Build application and create image]
+    types:
+    - completed
 
 jobs:
-  gitguardian:
+  docker:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     services:
       registry:

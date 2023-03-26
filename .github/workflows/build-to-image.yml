@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    container: gitguardian/ggshield:latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -22,3 +23,8 @@ jobs:
 
     - name: Build image
       run: docker build . --tag otherdevopsgene/hello-world-server:latest
+
+    - name: Scan image
+      run: ggshield secret scan docker otherdevopsgene/hello-world-server:latest
+      env:
+        GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
