@@ -2,13 +2,14 @@ name: Build application and create image
 
 on: [push]
 
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
 
     steps:
     - name: Checkout
