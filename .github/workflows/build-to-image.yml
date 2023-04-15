@@ -1,0 +1,41 @@
+name: Build application and create image
+
+on: [push]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up the JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: temurin
+        cache: maven
+
+    - name: Build with Maven
+      run: mvn --batch-mode --update-snapshots package
+
+    - name: Scan IaC code
+      uses: bridgecrewio/checkov-action@v12
+      with:
+        output_format: sarif
+        output_file_path: results.sarif
+
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      if: success() || failure()
+      with:
+        sarif_file: results.sarif
+
+    - name: Build image
+      run: docker build . --tag otherdevopsgene/hello-world-server:latest
